@@ -1,0 +1,35 @@
+{
+  "name": "blocks",
+  "description": "E.g. Seed project to get started with Famo.us.",
+  "version": "0.1.0",
+  "homepage": "https://github.com/pafciu17/blocks",
+  "authors": [
+    {
+      "name": "pawel",
+      "url": "http://github.com/pafciu17/"
+    }
+  ],
+  "main": "app/index.html",
+  "moduleType": [
+    "amd"
+  ],
+  "keywords": [
+    "famo.us"
+  ],
+  "license": "ISC",
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "src/lib",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "requirejs": "~2.1.11",
+    "almond": "~0.2.9",
+    "famous-polyfills": "~0.3.0",
+    "famous": "~0.3.0-rc",
+    "rxjs": "~2.3.13"
+  }
+}
