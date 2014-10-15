@@ -30,6 +30,7 @@
     "almond": "~0.2.9",
     "famous-polyfills": "~0.3.0",
     "famous": "~0.3.0-rc",
-    "rxjs": "~2.3.13"
+    "rxjs": "~2.3.13",
+    "underscore": "~1.7.0"
   }
 }

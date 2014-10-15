@@ -52,7 +52,7 @@ define(function(require, exports, module) {
 				y: delta.y * 5
 			}
 		})
-		.filter(function(delta){
+		.filter(function(delta) {
 			if (!delta) {
 				return false;
 			}
@@ -60,14 +60,10 @@ define(function(require, exports, module) {
 			return spaceController.canMove({
 				x: position.x + delta.x,
 				y: position.y + delta.y
-			})
+			});
 		});
 
-	position.subscribe(function(delta){
+	position.subscribe(function(delta) {
 		blockController.move(delta);
 	});
-
-
-
-
 });
