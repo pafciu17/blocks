@@ -3,10 +3,11 @@ define(function (require, exports, module) {
 	var Modifier = require('famous/core/Modifier');
 	var Transform = require('famous/core/Transform');
 
-	function Block(context) {
+	function Block(context, size) {
 		this.context = context;
+		this.size = size;
 		this.block = new Surface({
-			size: [30, 30],
+			size: [size.width, size.height],
 			properties: {
 				backgroundColor: 'red',
 				border: 'black 1px solid',
@@ -20,6 +21,10 @@ define(function (require, exports, module) {
 			transform: transformClb
 		});
 		this.context.add(modifier).add(this.block);
+	};
+
+	Block.prototype.getSize = function(){
+		return this.size;
 	};
 
 	module.exports = Block;
