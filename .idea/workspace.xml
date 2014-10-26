@@ -2,9 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="8ad74054-f295-482b-b370-3745c24fdeec" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/src/ElementFactory.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/Block.js" afterPath="$PROJECT_DIR$/app/src/Block.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/Element.js" afterPath="$PROJECT_DIR$/app/src/Element.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/src/RowManager.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/SpaceController.js" afterPath="$PROJECT_DIR$/app/src/SpaceController.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main.js" afterPath="$PROJECT_DIR$/app/src/main.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
@@ -47,13 +46,22 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="main.js" pinned="false" current="true" current-in-tab="true">
+      <file leaf-file-name="main.js" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/src/main.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="66" column="22" selection-start="1627" selection-end="1627" vertical-scroll-proportion="0.36548224" vertical-offset="774" max-vertical-offset="1440">
+            <state line="47" column="16" selection-start="1263" selection-end="1263" vertical-scroll-proportion="-13.269231" vertical-offset="360" max-vertical-offset="1530">
               <folding>
                 <element signature="n#!!doc" expanded="true" />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="RowManager.js" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/src/RowManager.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="16" column="25" selection-start="441" selection-end="441" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="600">
+              <folding />
             </state>
           </provider>
         </entry>
@@ -71,7 +79,10 @@
         <entry file="file://$PROJECT_DIR$/app/src/ElementFactory.js">
           <provider selected="true" editor-type-id="text-editor">
             <state line="62" column="24" selection-start="1957" selection-end="1957" vertical-scroll-proportion="0.0" vertical-offset="474" max-vertical-offset="1095">
-              <folding />
+              <folding>
+                <marker date="1414330880035" expanded="true" signature="43:2005" placeholder="{...}" />
+                <marker date="1414330880035" expanded="true" signature="1129:1188" placeholder="[...]" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -88,25 +99,16 @@
       <file leaf-file-name="bower.json" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/bower.json">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="615">
+            <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="-0.0" vertical-offset="0" max-vertical-offset="615">
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="SpaceController.js" pinned="false" current="false" current-in-tab="false">
+      <file leaf-file-name="SpaceController.js" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/app/src/SpaceController.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="13" column="46" selection-start="398" selection-end="398" vertical-scroll-proportion="-6.1538463" vertical-offset="35" max-vertical-offset="1140">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="Scene.js" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/lib/famous/src/core/Scene.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="24" column="29" selection-start="884" selection-end="884" vertical-scroll-proportion="0.0" vertical-offset="360" max-vertical-offset="2670">
+            <state line="51" column="11" selection-start="1411" selection-end="1411" vertical-scroll-proportion="0.48442906" vertical-offset="485" max-vertical-offset="1170">
               <folding />
             </state>
           </provider>
@@ -142,11 +144,12 @@
         <option value="$PROJECT_DIR$/app/src/AvailableSpaceController.js" />
         <option value="$PROJECT_DIR$/app/src/Board.js" />
         <option value="$PROJECT_DIR$/app/src/BlockController.js" />
-        <option value="$PROJECT_DIR$/app/src/SpaceController.js" />
         <option value="$PROJECT_DIR$/app/src/Block.js" />
         <option value="$PROJECT_DIR$/app/src/Element.js" />
         <option value="$PROJECT_DIR$/app/src/ElementFactory.js" />
         <option value="$PROJECT_DIR$/app/src/main.js" />
+        <option value="$PROJECT_DIR$/app/src/RowManager.js" />
+        <option value="$PROJECT_DIR$/app/src/SpaceController.js" />
       </list>
     </option>
   </component>
@@ -304,7 +307,11 @@
       <created>1414328738996</created>
       <updated>1414328738996</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="add elements factory">
+      <created>1414331147546</created>
+      <updated>1414331147546</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="ToolWindowManager">
@@ -341,19 +348,13 @@
     </option>
     <MESSAGE value="add support for elements" />
     <MESSAGE value="add support for element rotation" />
-    <option name="LAST_COMMIT_MESSAGE" value="add support for element rotation" />
+    <MESSAGE value="add elements factory" />
+    <option name="LAST_COMMIT_MESSAGE" value="add elements factory" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/app/src/BlockController.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="9" column="5" selection-start="190" selection-end="190" vertical-scroll-proportion="0.0" vertical-offset="135" max-vertical-offset="330">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/lib/famous/src/core/Scene.js">
       <provider selected="true" editor-type-id="text-editor">
         <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="720" max-vertical-offset="2775">
@@ -413,13 +414,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/SpaceController.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="13" column="46" selection-start="398" selection-end="398" vertical-scroll-proportion="-6.1538463" vertical-offset="35" max-vertical-offset="1140">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/src/Block.js">
       <provider selected="true" editor-type-id="text-editor">
         <state line="5" column="38" selection-start="228" selection-end="228" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="555">
@@ -437,7 +431,10 @@
     <entry file="file://$PROJECT_DIR$/app/src/ElementFactory.js">
       <provider selected="true" editor-type-id="text-editor">
         <state line="62" column="24" selection-start="1957" selection-end="1957" vertical-scroll-proportion="0.0" vertical-offset="474" max-vertical-offset="1095">
-          <folding />
+          <folding>
+            <marker date="1414330880035" expanded="true" signature="43:2005" placeholder="{...}" />
+            <marker date="1414330880035" expanded="true" signature="1129:1188" placeholder="[...]" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -450,10 +447,24 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="66" column="22" selection-start="1627" selection-end="1627" vertical-scroll-proportion="0.36548224" vertical-offset="774" max-vertical-offset="1440">
+        <state line="47" column="16" selection-start="1263" selection-end="1263" vertical-scroll-proportion="-13.269231" vertical-offset="360" max-vertical-offset="1530">
           <folding>
             <element signature="n#!!doc" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/RowManager.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="16" column="25" selection-start="441" selection-end="441" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="600">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/SpaceController.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="51" column="11" selection-start="1411" selection-end="1411" vertical-scroll-proportion="0.48442906" vertical-offset="485" max-vertical-offset="1170">
+          <folding />
         </state>
       </provider>
     </entry>

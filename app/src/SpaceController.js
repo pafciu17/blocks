@@ -1,10 +1,9 @@
 define(function (require, exports, module) {
 
 	function SpaceController(boardSize, blockSize) {
-		this.boardSize = boardSize;
 		this.blockSize = blockSize;
 		this.blocks = []
-		this.movableSize = translatePixelIntoBlockCoordinates(blockSize, {
+		this.size = translatePixelIntoBlockCoordinates(blockSize, {
 			x: boardSize.width,
 			y: boardSize.height
 		});
@@ -24,15 +23,15 @@ define(function (require, exports, module) {
 		if (positionIsOccupied(this.blocks, position)) {
 			return false;
 		}
-	    return isWithin(position.x, 0, this.movableSize.x) && isWithin(position.y, 0, this.movableSize.y);
-	};
-
-	SpaceController.prototype.getSize = function(){
-		return this.boardSize.height;
+			return isWithin(position.x, 0, this.size.x) && isWithin(position.y, 0, this.size.y);
 	};
 
 	SpaceController.prototype.getBlockSize = function(){
 		return this.blockSize;
+	};
+
+	SpaceController.prototype.getSize = function() {
+		return this.size;
 	};
 
 	var translatePixelIntoBlockCoordinates = function (blockSize, position) {
@@ -49,14 +48,13 @@ define(function (require, exports, module) {
 	SpaceController.prototype.addElement = function(element){
 		var self = this;
 		_.forEach(element.getBlockControllers(), function(controller){
-			self.blocks.push(controller.getPosition());
-		})
+			self.addBlock(controller.getPosition());
+		});
 	};
 
 	SpaceController.prototype.pixelToBlockCoordinates = function(pixelsCoords){
 		return {
-			x: Math.floor(pixelsCoords.x / this.blockSize.width),
-			y: Math.floor(pixelsCoords.y / this.blockSize.height)
+			x: Math.floor(pixelsCoords.x / this.blockSize.width), y: Math.floor(pixelsCoords.y / this.blockSize.height)
 		}
 	};
 
@@ -65,6 +63,10 @@ define(function (require, exports, module) {
 			x: blockCoords.x  * this.blockSize.width,
 			y: blockCoords.y  * this.blockSize.height
 		}
+	};
+
+	SpaceController.prototype.getBlocks = function(){
+		return this.blocks;
 	};
 
 	module.exports = SpaceController;

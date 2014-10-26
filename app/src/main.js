@@ -10,6 +10,7 @@ define(function(require, exports, module) {
 	var BlockController = require('BlockController');
 	var Board = require('Board');
 	var SpaceController = require('SpaceController');
+	var RowManager = require('RowManager');
 
 	var ElementFactory = require('ElementFactory');
 
@@ -25,6 +26,7 @@ define(function(require, exports, module) {
 
 	var spaceController = new SpaceController(boardSize, blockSize);
 	var board = new Board(mainContext, boardSize);
+	var rowManager = new RowManager(spaceController);
 
 	var elementFactory = new ElementFactory(mainContext, spaceController);
 	var element;
@@ -42,6 +44,10 @@ define(function(require, exports, module) {
 			element.moveDown();
 		} else {
 			spaceController.addElement(element);
+			var filledRows = rowManager.getFilledRows();
+			if (filledRows) {
+				console.log('filled row: ' + filledRows);
+			};
 			getNewElement();
 		}
 	});
