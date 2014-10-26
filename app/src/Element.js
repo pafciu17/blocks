@@ -2,17 +2,21 @@ define(function (require, exports, module) {
 	var Block = require('Block');
 	var BlockController = require('BlockController');
 
-	function Element(context, spaceController, shapes) {
+	function Element(context, spaceController, options) {
 		var self = this;
 		this.blockControllers = [];
-		this.shapes = shapes;
+		this.shapes = options.shapes || [];
+		this.color = options.color || '';
 		this.currentShapeIndex = 0;
 		this.position = {
 			x: 0,
 			y: 0
 		};
 		_.forEach(this.shapes[this.currentShapeIndex], function(position){
-			var block = new Block(context, spaceController.getBlockSize());
+			var block = new Block(context, {
+				size: spaceController.getBlockSize(),
+				color: self.color
+			});
 			var blockController = new BlockController();
 			blockController.setSpaceController(spaceController);
 			blockController.setPosition(position);

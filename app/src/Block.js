@@ -3,13 +3,14 @@ define(function (require, exports, module) {
 	var Modifier = require('famous/core/Modifier');
 	var Transform = require('famous/core/Transform');
 
-	function Block(context, size) {
+	function Block(context, options) {
 		this.context = context;
-		this.size = size;
+		this.size = options.size || {};
+		this.color = options.color || '';
 		this.block = new Surface({
-			size: [size.width, size.height],
+			size: [this.size.width, this.size.height],
 			properties: {
-				backgroundColor: 'red',
+				backgroundColor: this.color,
 				border: 'black 1px solid',
 				textAlign: 'center'
 			}

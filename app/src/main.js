@@ -11,7 +11,7 @@ define(function(require, exports, module) {
 	var Board = require('Board');
 	var SpaceController = require('SpaceController');
 
-	var Element = require('Element');
+	var ElementFactory = require('ElementFactory');
 
 	var mainContext = Engine.createContext();
 	var boardSize = {
@@ -26,24 +26,17 @@ define(function(require, exports, module) {
 	var spaceController = new SpaceController(boardSize, blockSize);
 	var board = new Board(mainContext, boardSize);
 
+	var elementFactory = new ElementFactory(mainContext, spaceController);
 	var element;
 	var elements = []
 
 	var getNewElement = function() {
-		element = new Element(mainContext, spaceController,
-			[
-				[{x:0, y:0}, {x:0, y:1}, {x:0, y:2}, {x:1, y:2}],
-				[{x:0, y:2}, {x:1, y:2}, {x:2, y:2}, {x:2, y:1}],
-				[{x:0, y:0}, {x:1, y:0}, {x:1, y:1}, {x:1, y:2}],
-				[{x:0, y:2}, {x:0, y:1}, {x:1, y:1}, {x:2, y:1}]
-			]);
+		element = elementFactory.createRandomElement();
 		elements.push(element);
 	};
 	getNewElement();
 
-
-
-	var source = Rx.Observable.timer(0, 200);
+	var source = Rx.Observable.timer(0, 400);
 	source.subscribe(function(){
 		if (element.canMoveDown()) {
 			element.moveDown();
@@ -58,7 +51,7 @@ define(function(require, exports, module) {
 			return keyEvent.keyIdentifier.toLowerCase();
 		})
 		.filter(function(keyId){
-			return _.contains(['left', 'right'], keyId);
+			return _.contains(['left', 'right', 'down'], keyId);
 		});
 	arrowKeys.subscribe(function(direction) {
 		switch(direction) {
@@ -70,6 +63,11 @@ define(function(require, exports, module) {
 			case 'right':
 				if (element.canMoveRight()) {
 					element.moveRight();
+				}
+				break;
+			case 'down':
+				if (element.canMoveDown()) {
+					element.moveDown();
 				}
 				break;
 		};
