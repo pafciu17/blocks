@@ -101,6 +101,14 @@ define(function (require, exports, module) {
 		this.position = this.spaceController.blockToPixelCoordinates(position);
 	};
 
+	BlockController.prototype.setPosition = function(position){
+		this.position = this.spaceController.blockToPixelCoordinates(position);
+	};
+
+	BlockController.prototype.remove = function(){
+		this.block.remove();
+	};
+
 	module.exports = BlockController;
 
 })

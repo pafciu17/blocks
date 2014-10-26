@@ -30,11 +30,10 @@ define(function(require, exports, module) {
 
 	var elementFactory = new ElementFactory(mainContext, spaceController);
 	var element;
-	var elements = []
 
 	var getNewElement = function() {
 		element = elementFactory.createRandomElement();
-		elements.push(element);
+		//elements.push(element);
 	};
 	getNewElement();
 
@@ -46,7 +45,7 @@ define(function(require, exports, module) {
 			spaceController.addElement(element);
 			var filledRows = rowManager.getFilledRows();
 			if (filledRows) {
-				console.log('filled row: ' + filledRows);
+				spaceController.clearRows(filledRows);
 			};
 			getNewElement();
 		}

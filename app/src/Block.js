@@ -9,10 +9,10 @@ define(function (require, exports, module) {
 		this.color = options.color || '';
 		this.block = new Surface({
 			size: [this.size.width, this.size.height],
+			visible: false,
 			properties: {
 				backgroundColor: this.color,
-				border: 'black 1px solid',
-				textAlign: 'center'
+				border: 'black 1px solid'
 			}
 		});
 	}
@@ -26,6 +26,10 @@ define(function (require, exports, module) {
 
 	Block.prototype.getSize = function(){
 		return this.size;
+	};
+
+	Block.prototype.remove = function(){
+		this.block.setProperties({display: 'none'});
 	};
 
 	module.exports = Block;

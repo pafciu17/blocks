@@ -22,7 +22,7 @@ define(function (require, exports, module) {
 	};
 
 	RowManager.prototype.getFilledRows = function(position){
-		var occupiedBlocks = this.spaceController.getBlocks();
+		var occupiedBlocks = this.spaceController.getBlockPositions();
 		var size = this.spaceController.getSize();
 		var rows = createArrayFilledWithZeros(size.y);
 		_.forEach(occupiedBlocks, function(block){
