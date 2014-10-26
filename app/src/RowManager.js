@@ -17,7 +17,6 @@ define(function (require, exports, module) {
 				foundRows.push(rowIndex)
 			}
 		});
-		console.log(foundRows);
 		return foundRows;
 	};
 
