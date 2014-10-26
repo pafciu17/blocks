@@ -26,19 +26,21 @@ define(function(require, exports, module) {
 	var spaceController = new SpaceController(boardSize, blockSize);
 	var board = new Board(mainContext, boardSize);
 
-	var blockController;
-	var block;
-	var controllers = [];
-	var blocks = [];
 	var element;
 	var elements = []
 
 	var getNewElement = function() {
 		element = new Element(mainContext, spaceController,
-			[{x:0, y:0}, {x:0, y:1}, {x:0, y:2}, {x:1, y:2}]);
+			[
+				[{x:0, y:0}, {x:0, y:1}, {x:0, y:2}, {x:1, y:2}],
+				[{x:0, y:2}, {x:1, y:2}, {x:2, y:2}, {x:2, y:1}],
+				[{x:0, y:0}, {x:1, y:0}, {x:1, y:1}, {x:1, y:2}],
+				[{x:0, y:2}, {x:0, y:1}, {x:1, y:1}, {x:2, y:1}]
+			]);
 		elements.push(element);
 	};
 	getNewElement();
+
 
 
 	var source = Rx.Observable.timer(0, 200);
@@ -51,15 +53,14 @@ define(function(require, exports, module) {
 		}
 	});
 
-
-	var keys = Rx.Observable.fromEvent(document, 'keydown')
+	var arrowKeys = Rx.Observable.fromEvent(document, 'keydown')
 		.map(function(keyEvent) {
 			return keyEvent.keyIdentifier.toLowerCase();
 		})
 		.filter(function(keyId){
 			return _.contains(['left', 'right'], keyId);
 		});
-	keys.subscribe(function(direction) {
+	arrowKeys.subscribe(function(direction) {
 		switch(direction) {
 			case 'left':
 				if (element.canMoveLeft()) {
@@ -74,6 +75,18 @@ define(function(require, exports, module) {
 		};
 	});
 
+	var rotateKey = Rx.Observable.fromEvent(document, 'keydown')
+		.map(function(keyEvent) {
+			return keyEvent.keyIdentifier.toLowerCase();
+		})
+		.filter(function(keyId){
+			return _.contains(['u+0052'], keyId);
+		});
+	rotateKey.subscribe(function(){
+		if (element.canRotate()) {
+			element.rotate();
+		};
+	});
 
 
 });

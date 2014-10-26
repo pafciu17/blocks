@@ -57,7 +57,8 @@ define(function (require, exports, module) {
 
 	BlockController.prototype.canMove = function(direction){
 	    var newPosition = getNewPosition(this.position, direction, this.block.getSize());
-		return this.spaceController.canMove(newPosition);
+		var blockCoords = this.spaceController.pixelToBlockCoordinates(newPosition);
+		return this.spaceController.canMove(blockCoords);
 	}
 
 	BlockController.prototype.canMoveDown = function(){
@@ -90,6 +91,10 @@ define(function (require, exports, module) {
 
 	BlockController.prototype.getPosition = function(){
 		return this.spaceController.pixelToBlockCoordinates(this.position);
+	};
+
+	BlockController.prototype.canSetPosition = function(position){
+		return this.spaceController.canMove(position);
 	};
 
 	BlockController.prototype.setPosition = function(position){

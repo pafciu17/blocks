@@ -4,14 +4,14 @@ define(function (require, exports, module) {
 		this.boardSize = boardSize;
 		this.blockSize = blockSize;
 		this.blocks = []
-		this.movableSize = {
-			width: boardSize.width - blockSize.width,
-			height: boardSize.height - blockSize.height
-		}
+		this.movableSize = translatePixelIntoBlockCoordinates(blockSize, {
+			x: boardSize.width,
+			y: boardSize.height
+		});
 	}
 
 	var isWithin = function(value, bottomLimit, upperLimit){
-		return bottomLimit <= value && value <= upperLimit;
+		return bottomLimit <= value && value < upperLimit;
 	};
 
 	var positionIsOccupied = function (blocks, newPosition) {
@@ -21,11 +21,10 @@ define(function (require, exports, module) {
 	};
 
 	SpaceController.prototype.canMove = function(position){
-		var newPosition = translatePixelIntoBlockCoordinates(this.blockSize, position);
-		if (positionIsOccupied(this.blocks, newPosition)) {
+		if (positionIsOccupied(this.blocks, position)) {
 			return false;
 		}
-	    return isWithin(position.x, 0, this.movableSize.width) && isWithin(position.y, 0, this.movableSize.height);
+	    return isWithin(position.x, 0, this.movableSize.x) && isWithin(position.y, 0, this.movableSize.y);
 	};
 
 	SpaceController.prototype.getSize = function(){
