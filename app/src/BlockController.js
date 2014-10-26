@@ -8,7 +8,6 @@ define(function (require, exports, module) {
 	BlockController.prototype.assignBlock = function(block){
 		var self = this;
 		this.block = block;
-		this.position = {x:0, y:0};
 		this.moved = false;
 		this.modifier = function() {
 			return Transform.translate(self.position.x, self.position.y, 0)
@@ -27,35 +26,62 @@ define(function (require, exports, module) {
 		};
 	};
 
-	BlockController.prototype.move = function(delta){
-		var newPosition = moveByDelta(this.position, delta);
-		if (this.spaceController.canMove(newPosition)) {
-			this.position = newPosition;
-			this.moved = true;
-		} else {
-			this.moved = false;
+	var getDeltaMovement = function(direction, blockSize){
+		switch(direction) {
+			case 'down':
+				return {
+					x: 0,
+					y: blockSize.height
+				};
+			case 'right':
+				return {
+					x: blockSize.width,
+					y: 0
+				};
+			case 'left':
+				return {
+					x: -blockSize.width,
+					y: 0
+				};
 		}
+	}
+
+	var getNewPosition = function(position, direction, blockSize){
+	    return moveByDelta(position, getDeltaMovement(direction, blockSize));
+	}
+
+	BlockController.prototype.move = function(direction){
+		var newPosition = getNewPosition(this.position, direction, this.block.getSize());
+		this.position = newPosition;
+	};
+
+	BlockController.prototype.canMove = function(direction){
+	    var newPosition = getNewPosition(this.position, direction, this.block.getSize());
+		return this.spaceController.canMove(newPosition);
+	}
+
+	BlockController.prototype.canMoveDown = function(){
+		return this.canMove('down');
+	};
+
+	BlockController.prototype.canMoveRight = function(){
+		return this.canMove('right');
+	};
+
+	BlockController.prototype.canMoveLeft = function(){
+		return this.canMove('left');
 	};
 
 	BlockController.prototype.moveDown = function(){
-		this.move({
-			x: 0,
-			y: this.block.getSize().height
-		});
+		this.move('down');
 	};
 
 	BlockController.prototype.moveRight = function(){
-		this.move({
-			x: this.block.getSize().width,
-			y: 0
-		});
+		this.move('right');;
 	};
 
 	BlockController.prototype.moveLeft = function(){
-		this.move({
-			x: -this.block.getSize().width,
-			y: 0
-		});
+		this.move('left');;
 	};
 
 	BlockController.prototype.hasMoved = function() {
@@ -63,7 +89,11 @@ define(function (require, exports, module) {
 	};
 
 	BlockController.prototype.getPosition = function(){
-		return this.position;
+		return this.spaceController.pixelToBlockCoordinates(this.position);
+	};
+
+	BlockController.prototype.setPosition = function(position){
+		this.position = this.spaceController.blockToPixelCoordinates(position);
 	};
 
 	module.exports = BlockController;

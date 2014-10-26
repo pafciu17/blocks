@@ -28,12 +28,12 @@ define(function (require, exports, module) {
 	    return isWithin(position.x, 0, this.movableSize.width) && isWithin(position.y, 0, this.movableSize.height);
 	};
 
-	SpaceController.prototype.getWidth = function(){
-		return this.boardSize.width;
+	SpaceController.prototype.getSize = function(){
+		return this.boardSize.height;
 	};
 
-	SpaceController.prototype.getHeight = function(){
-		return this.boardSize.height;
+	SpaceController.prototype.getBlockSize = function(){
+		return this.blockSize;
 	};
 
 	var translatePixelIntoBlockCoordinates = function (blockSize, position) {
@@ -44,7 +44,28 @@ define(function (require, exports, module) {
 	};
 
 	SpaceController.prototype.addBlock = function(position){
-		this.blocks.push(translatePixelIntoBlockCoordinates(this.blockSize, position));
+		this.blocks.push(position);
+	};
+
+	SpaceController.prototype.addElement = function(element){
+		var self = this;
+		_.forEach(element.getBlockControllers(), function(controller){
+			self.blocks.push(controller.getPosition());
+		})
+	};
+
+	SpaceController.prototype.pixelToBlockCoordinates = function(pixelsCoords){
+		return {
+			x: Math.floor(pixelsCoords.x / this.blockSize.width),
+			y: Math.floor(pixelsCoords.y / this.blockSize.height)
+		}
+	};
+
+	SpaceController.prototype.blockToPixelCoordinates = function(blockCoords){
+		return {
+			x: blockCoords.x  * this.blockSize.width,
+			y: blockCoords.y  * this.blockSize.height
+		}
 	};
 
 	module.exports = SpaceController;
