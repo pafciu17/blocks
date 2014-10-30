@@ -1,0 +1,64 @@
+define(function (require, exports, module) {
+	var Rx = require('rx.all');
+	var Block = require('Block');
+	var BlockController = require('BlockController');
+	var Board = require('Board');
+	var SpaceController = require('SpaceController');
+	var RowManager = require('RowManager');
+	var ElementFactory = require('ElementFactory');
+	var SteeringInterface = require('SteeringInterface');
+
+	function Gameplay(context) {
+		this.context = context;
+		var boardSize = {
+			width: 300,
+			height: 500
+		};
+		var blockSize = {
+			width: boardSize.width / 12,
+			height: boardSize.height / 20
+		};
+
+		this.spaceController = new SpaceController(boardSize, blockSize);
+		this.board = new Board(this.context, boardSize);
+		this.rowManager = new RowManager(this.spaceController);
+
+		this.elementFactory = new ElementFactory(this.context, this.spaceController);
+		this.currentElement = null;
+
+		this.steeringInterface = new SteeringInterface(this.currentElement);
+	};
+
+	Gameplay.prototype._addElementToStack = function(element){
+		this.spaceController.addElement(element);
+		var filledRows = this.rowManager.getFilledRows();
+		if (filledRows) {
+			this.spaceController.clearRows(filledRows);
+		};
+	};
+
+	Gameplay.prototype._createNewElement = function(){
+		var newElement = this.elementFactory.createRandomElement();
+		this.steeringInterface.setElement(newElement);
+		return newElement;
+	};
+
+	Gameplay.prototype._setAndStartTimeStream = function(interval, clb){
+		this.timeStream = Rx.Observable.timer(0, 300).subscribe(clb);
+	};
+
+	Gameplay.prototype.start = function(){
+		var self = this;
+		this.currentElement = self._createNewElement();
+		this._setAndStartTimeStream(100, function(){
+			if (self.currentElement.canMoveDown()) {
+				self.currentElement.moveDown();
+			} else {
+				self._addElementToStack(self.currentElement);
+				self.currentElement = self._createNewElement();
+			}
+		});
+	};
+
+	module.exports = Gameplay;
+})

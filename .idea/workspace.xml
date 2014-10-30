@@ -2,8 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="8ad74054-f295-482b-b370-3745c24fdeec" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/ElementFactory.js" afterPath="$PROJECT_DIR$/app/src/ElementFactory.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/RowManager.js" afterPath="$PROJECT_DIR$/app/src/RowManager.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/src/Gameplay.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/src/SteeringInterface.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main.js" afterPath="$PROJECT_DIR$/app/src/main.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="blocks.iws" />
@@ -27,19 +28,10 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="index.html" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/index.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="3.7916667" vertical-offset="91" max-vertical-offset="645">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file leaf-file-name="main.js" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/src/main.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="43" column="16" selection-start="1150" selection-end="1150" vertical-scroll-proportion="0.0" vertical-offset="435" max-vertical-offset="1515">
+            <state line="14" column="0" selection-start="307" selection-end="307" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="300">
               <folding>
                 <element signature="n#!!doc" expanded="true" />
               </folding>
@@ -47,75 +39,19 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="RowManager.js" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/src/RowManager.js">
+      <file leaf-file-name="Gameplay.js" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/src/Gameplay.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="33" column="2" selection-start="859" selection-end="859" vertical-scroll-proportion="0.0" vertical-offset="159" max-vertical-offset="585">
+            <state line="46" column="50" selection-start="1487" selection-end="1487" vertical-scroll-proportion="0.0" vertical-offset="329" max-vertical-offset="1035">
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="ElementFactory.js" pinned="false" current="true" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/app/src/ElementFactory.js">
+      <file leaf-file-name="SteeringInterface.js" pinned="false" current="true" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/app/src/SteeringInterface.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="41" column="66" selection-start="1397" selection-end="1397" vertical-scroll-proportion="0.6111111" vertical-offset="384" max-vertical-offset="1095">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="Board.js" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/src/Board.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="9" column="41" selection-start="264" selection-end="264" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="330">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="bower.json" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/bower.json">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="-0.0" vertical-offset="0" max-vertical-offset="615">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="SpaceController.js" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/src/SpaceController.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="77" column="24" selection-start="2202" selection-end="2202" vertical-scroll-proportion="0.0" vertical-offset="1014" max-vertical-offset="1815">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="Surface.js" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/lib/famous/src/core/Surface.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="220" column="25" selection-start="6995" selection-end="7005" vertical-scroll-proportion="-7.076923" vertical-offset="3116" max-vertical-offset="7455">
-              <folding>
-                <element signature="n#!!doc" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="Block.js" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/src/Block.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="30" column="26" selection-start="765" selection-end="765" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="615">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="BlockController.js" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/src/BlockController.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="108" column="28" selection-start="2742" selection-end="2742" vertical-scroll-proportion="0.0" vertical-offset="1059" max-vertical-offset="1785">
+            <state line="34" column="33" selection-start="893" selection-end="893" vertical-scroll-proportion="0.8279221" vertical-offset="0" max-vertical-offset="780">
               <folding />
             </state>
           </provider>
@@ -144,10 +80,12 @@
         <option value="$PROJECT_DIR$/app/src/Board.js" />
         <option value="$PROJECT_DIR$/app/src/BlockController.js" />
         <option value="$PROJECT_DIR$/app/src/Block.js" />
-        <option value="$PROJECT_DIR$/app/src/main.js" />
         <option value="$PROJECT_DIR$/app/src/SpaceController.js" />
         <option value="$PROJECT_DIR$/app/src/RowManager.js" />
         <option value="$PROJECT_DIR$/app/src/ElementFactory.js" />
+        <option value="$PROJECT_DIR$/app/src/Gameplay.js" />
+        <option value="$PROJECT_DIR$/app/src/SteeringInterface.js" />
+        <option value="$PROJECT_DIR$/app/src/main.js" />
       </list>
     </option>
   </component>
@@ -252,28 +190,6 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="blocks" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="blocks" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="app" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="lib" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="famous" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
         </subPane>
       </pane>
       <pane id="Scope" />
@@ -285,8 +201,8 @@
     <property name="options.lastSelected" value="project.propVCSSupport.Mappings" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$/../blocks2/blocks" />
     <property name="FullScreen" value="false" />
-    <property name="options.splitter.details.proportions" value="0.2" />
     <property name="options.searchVisible" value="true" />
+    <property name="options.splitter.details.proportions" value="0.2" />
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
@@ -357,7 +273,11 @@
       <created>1414354023568</created>
       <updated>1414354023568</updated>
     </task>
-    <option name="localTasksCounter" value="6" />
+    <task id="LOCAL-00006" summary="fix shape for one of elements">
+      <created>1414354299871</created>
+      <updated>1414354299871</updated>
+    </task>
+    <option name="localTasksCounter" value="7" />
     <servers />
   </component>
   <component name="ToolWindowManager">
@@ -366,20 +286,20 @@
     <layout>
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.32972136" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32972136" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
-      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
-      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
+      <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.24212144" sideWeight="0.6702786" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
+      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32972136" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32972136" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="SLIDING" type="SLIDING" visible="false" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
@@ -397,31 +317,13 @@
     <MESSAGE value="add elements factory" />
     <MESSAGE value="add RowManager" />
     <MESSAGE value="add handling of row disapring" />
-    <option name="LAST_COMMIT_MESSAGE" value="add handling of row disapring" />
+    <MESSAGE value="fix shape for one of elements" />
+    <option name="LAST_COMMIT_MESSAGE" value="fix shape for one of elements" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/app/src/Block.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="17" column="25" selection-start="434" selection-end="434" vertical-scroll-proportion="0.0" vertical-offset="255" max-vertical-offset="390">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/lib/famous/src/core/Engine.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="5790" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/.gitignore">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="330">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/src/requireConfig.js">
       <provider selected="true" editor-type-id="text-editor">
         <state line="2" column="0" selection-start="37" selection-end="37" vertical-scroll-proportion="0.0" vertical-offset="9" max-vertical-offset="600" />
@@ -432,16 +334,9 @@
         <state line="24" column="29" selection-start="884" selection-end="884" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="2670" />
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/Element.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="7" column="43" selection-start="269" selection-end="269" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="1875">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/index.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="3.7916667" vertical-offset="91" max-vertical-offset="645">
+        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="91" max-vertical-offset="645">
           <folding />
         </state>
       </provider>
@@ -462,16 +357,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/app/lib/famous/src/core/Surface.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="220" column="25" selection-start="6995" selection-end="7005" vertical-scroll-proportion="-7.076923" vertical-offset="3116" max-vertical-offset="7455">
-          <folding>
-            <element signature="n#!!doc" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/Block.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="30" column="26" selection-start="765" selection-end="765" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="615">
+        <state line="220" column="25" selection-start="6995" selection-end="7005" vertical-scroll-proportion="0.0" vertical-offset="3116" max-vertical-offset="7455">
           <folding />
         </state>
       </provider>
@@ -480,22 +366,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state line="108" column="28" selection-start="2742" selection-end="2742" vertical-scroll-proportion="0.0" vertical-offset="1059" max-vertical-offset="1785">
           <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/SpaceController.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="77" column="24" selection-start="2202" selection-end="2202" vertical-scroll-proportion="0.0" vertical-offset="1014" max-vertical-offset="1815">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="43" column="16" selection-start="1150" selection-end="1150" vertical-scroll-proportion="0.0" vertical-offset="885" max-vertical-offset="1515">
-          <folding>
-            <element signature="n#!!doc" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -508,7 +378,58 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/app/src/ElementFactory.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="41" column="66" selection-start="1397" selection-end="1397" vertical-scroll-proportion="0.6111111" vertical-offset="384" max-vertical-offset="1095">
+        <state line="41" column="66" selection-start="1397" selection-end="1397" vertical-scroll-proportion="0.0" vertical-offset="384" max-vertical-offset="1095">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/Element.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="7" column="43" selection-start="269" selection-end="269" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="1875">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/Block.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="12" column="25" selection-start="0" selection-end="859" vertical-scroll-proportion="0.0" vertical-offset="24" max-vertical-offset="615">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/SpaceController.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="77" column="24" selection-start="2202" selection-end="2202" vertical-scroll-proportion="0.0" vertical-offset="1014" max-vertical-offset="1815">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/lib/famous/src/core/ElementOutput.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="29" column="14" selection-start="1041" selection-end="1042" vertical-scroll-proportion="0.33275563" vertical-offset="138" max-vertical-offset="4905">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="14" column="0" selection-start="307" selection-end="307" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="300">
+          <folding>
+            <element signature="n#!!doc" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/Gameplay.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="46" column="50" selection-start="1487" selection-end="1487" vertical-scroll-proportion="0.0" vertical-offset="360" max-vertical-offset="1035">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/SteeringInterface.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="34" column="33" selection-start="893" selection-end="893" vertical-scroll-proportion="0.8279221" vertical-offset="0" max-vertical-offset="780">
           <folding />
         </state>
       </provider>
