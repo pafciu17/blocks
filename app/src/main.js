@@ -6,11 +6,19 @@ define(function(require, exports, module) {
 	var Engine = require('famous/core/Engine');
 	var Gameplay = require('Gameplay');
 
+	var Modal = require('Modal');
 	var mainContext = Engine.createContext();
+	var modal = new Modal(mainContext, 'Game Over');
+
+	modal.setOnClickCallback(function(){
+	    gameplay.restart();
+		modal.hide();
+	});
+
 
 	var gameplay = new Gameplay(mainContext);
-	gameplay.onGameOver(function(){
-		gameplay.restart();
+	gameplay.setOnGameOverCallback(function(){
+		modal.show();
 	});
 	gameplay.start();
 

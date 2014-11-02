@@ -85,7 +85,7 @@ define(function (require, exports, module) {
 		this._startNewElementCycle();
 	};
 
-	Gameplay.prototype.onGameOver = function(clb){
+	Gameplay.prototype.setOnGameOverCallback = function(clb){
 		this.gameOverClb = clb;
 	};
 
