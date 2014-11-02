@@ -112,5 +112,15 @@ define(function (require, exports, module) {
 		});
 	};
 
+	SpaceController.prototype.doesRowContainsBlocks = function(rowIndex){
+		return !!_.filter(this.getBlockPositions(), function(blockPosition){
+			return blockPosition.y === rowIndex;
+		}).length;
+	};
+
+	SpaceController.prototype.clearBlocks = function(){
+		this._removeBlockControllers(_.clone(this.blockControllers));
+	};
+
 	module.exports = SpaceController;
 })

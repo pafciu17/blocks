@@ -43,21 +43,50 @@ define(function (require, exports, module) {
 		return newElement;
 	};
 
-	Gameplay.prototype._setAndStartTimeStream = function(interval, clb){
-		this.timeStream = Rx.Observable.timer(0, 300).subscribe(clb);
+	Gameplay.prototype._setTimeStream = function(interval, clb){
+		var pauser = new Rx.Subject();
+		this.timeStream = Rx.Observable.timer(0, 300).pausable(pauser);
+		this.timeStreamSubscription = this.timeStream.subscribe(clb);
+	};
+
+	Gameplay.prototype._gameIsOver = function(){
+		return this.spaceController.doesRowContainsBlocks(0);
+	};
+
+	Gameplay.prototype._startNewElementCycle = function(){
+		this.currentElement = this._createNewElement();
+		this.timeStream.resume();
+	};
+
+	Gameplay.prototype._startNewElementCycleOrOverTheGame = function(){
+		this.timeStream.pause();
+		if (this._gameIsOver()) {
+			this.gameOverClb();
+		} else {
+			this._startNewElementCycle();
+		}
 	};
 
 	Gameplay.prototype.start = function(){
 		var self = this;
-		this.currentElement = self._createNewElement();
-		this._setAndStartTimeStream(100, function(){
+		this._setTimeStream(100, function(){
 			if (self.currentElement.canMoveDown()) {
 				self.currentElement.moveDown();
 			} else {
 				self._addElementToStack(self.currentElement);
-				self.currentElement = self._createNewElement();
+				self._startNewElementCycleOrOverTheGame();
 			}
 		});
+		this._startNewElementCycle();
+	};
+
+	Gameplay.prototype.restart = function(){
+		this.spaceController.clearBlocks();
+		this._startNewElementCycle();
+	};
+
+	Gameplay.prototype.onGameOver = function(clb){
+		this.gameOverClb = clb;
 	};
 
 	module.exports = Gameplay;

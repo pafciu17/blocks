@@ -9,6 +9,9 @@ define(function(require, exports, module) {
 	var mainContext = Engine.createContext();
 
 	var gameplay = new Gameplay(mainContext);
+	gameplay.onGameOver(function(){
+		gameplay.restart();
+	});
 	gameplay.start();
 
 });
