@@ -29,11 +29,16 @@ define(function (require, exports, module) {
 		this.steeringInterface = new SteeringInterface(this.currentElement);
 	};
 
+	Gameplay.prototype.setPointCounter = function(pointCounter){
+		this.pointCounter = pointCounter;
+	};
+
 	Gameplay.prototype._addElementToStack = function(element){
 		this.spaceController.addElement(element);
 		var filledRows = this.rowManager.getFilledRows();
 		if (filledRows) {
 			this.spaceController.clearRows(filledRows);
+			this.pointCounter.reportScoredRows(filledRows.length);
 		};
 	};
 
