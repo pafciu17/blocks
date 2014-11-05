@@ -1,5 +1,4 @@
 /* globals define */
-var pointCounter;
 define(function(require, exports, module) {
 	'use strict';
 
@@ -7,12 +6,13 @@ define(function(require, exports, module) {
 	var Engine = require('famous/core/Engine');
 	var Gameplay = require('Gameplay');
 	var PointCounter = require('PointCounter');
-
+	var PointsBoard = require('PointsBoard');
 	var Modal = require('Modal');
+
 	var mainContext = Engine.createContext();
 	var modal = new Modal(mainContext, 'Game Over');
-	pointCounter = new PointCounter();
-
+	var pointCounter = new PointCounter();
+	var pointsBoard = new PointsBoard(mainContext, pointCounter);
 
 
 	modal.setOnClickCallback(function(){

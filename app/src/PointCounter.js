@@ -13,6 +13,7 @@ define(function (require, exports, module) {
 
 	PointCounter.prototype.reportScoredRows = function(numbOfRows){
 		this.points += this._rowsToPoints(numbOfRows);
+		this._firePointsChangeEvent();
 	};
 
 	PointCounter.prototype.getPoints = function(numbOfRows){
@@ -21,6 +22,17 @@ define(function (require, exports, module) {
 
 	PointCounter.prototype.reset = function(){
 		this.points = 0;
+		this._firePointsChangeEvent();
+	};
+	
+	PointCounter.prototype.setOnPointsChangeCallback = function(clb){
+	    this.onPointsChangeCallback = clb;
+	};
+
+	PointCounter.prototype._firePointsChangeEvent = function(){
+		if (this.onPointsChangeCallback) {
+			this.onPointsChangeCallback(this.points);
+		};
 	};
 
 	module.exports = PointCounter;
