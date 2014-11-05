@@ -1,7 +1,7 @@
 define(function (require, exports, module) {
 
 	function PointCounter() {
-		this.points = 0;
+		this.reset();
 	};
 
 	PointCounter.prototype._rowsToPoints = function(numbOfRows){
@@ -17,6 +17,10 @@ define(function (require, exports, module) {
 
 	PointCounter.prototype.getPoints = function(numbOfRows){
 		return this.points;
+	};
+
+	PointCounter.prototype.reset = function(){
+		this.points = 0;
 	};
 
 	module.exports = PointCounter;

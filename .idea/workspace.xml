@@ -2,9 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="8ad74054-f295-482b-b370-3745c24fdeec" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/src/PointCounter.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/Gameplay.js" afterPath="$PROJECT_DIR$/app/src/Gameplay.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main.js" afterPath="$PROJECT_DIR$/app/src/main.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/PointCounter.js" afterPath="$PROJECT_DIR$/app/src/PointCounter.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="blocks.iws" />
@@ -31,16 +30,16 @@
       <file leaf-file-name="main.js" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/src/main.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="13" column="4" selection-start="384" selection-end="384" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="555">
+            <state line="13" column="4" selection-start="384" selection-end="384" vertical-scroll-proportion="0.0" vertical-offset="195" max-vertical-offset="555">
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="PointCounter.js" pinned="false" current="true" current-in-tab="true">
+      <file leaf-file-name="PointCounter.js" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/src/PointCounter.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="22" column="2" selection-start="531" selection-end="531" vertical-scroll-proportion="0.53571427" vertical-offset="0" max-vertical-offset="616">
+            <state line="8" column="55" selection-start="247" selection-end="247" vertical-scroll-proportion="0.0" vertical-offset="120" max-vertical-offset="480">
               <folding />
             </state>
           </provider>
@@ -49,16 +48,16 @@
       <file leaf-file-name="RowManager.js" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/src/RowManager.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="33" column="2" selection-start="859" selection-end="859" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="585">
+            <state line="33" column="2" selection-start="859" selection-end="859" vertical-scroll-proportion="0.0" vertical-offset="495" max-vertical-offset="585">
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Gameplay.js" pinned="false" current="false" current-in-tab="false">
+      <file leaf-file-name="Gameplay.js" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/app/src/Gameplay.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="40" column="46" selection-start="1314" selection-end="1314" vertical-scroll-proportion="0.0" vertical-offset="405" max-vertical-offset="1545">
+            <state line="84" column="23" selection-start="2525" selection-end="2525" vertical-scroll-proportion="0.5616883" vertical-offset="914" max-vertical-offset="1560">
               <folding />
             </state>
           </provider>
@@ -92,9 +91,9 @@
         <option value="$PROJECT_DIR$/app/src/SpaceController.js" />
         <option value="$PROJECT_DIR$/app/src/Block.js" />
         <option value="$PROJECT_DIR$/app/src/Modal.js" />
-        <option value="$PROJECT_DIR$/app/src/Gameplay.js" />
         <option value="$PROJECT_DIR$/app/src/main.js" />
         <option value="$PROJECT_DIR$/app/src/PointCounter.js" />
+        <option value="$PROJECT_DIR$/app/src/Gameplay.js" />
       </list>
     </option>
   </component>
@@ -131,6 +130,7 @@
       <sortByType />
     </navigator>
     <panes>
+      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -183,7 +183,6 @@
           </PATH>
         </subPane>
       </pane>
-      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -192,8 +191,8 @@
     <property name="options.lastSelected" value="project.propVCSSupport.Mappings" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$/../blocks2/blocks" />
     <property name="FullScreen" value="false" />
-    <property name="options.searchVisible" value="true" />
     <property name="options.splitter.details.proportions" value="0.2" />
+    <property name="options.searchVisible" value="true" />
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
@@ -280,7 +279,11 @@
       <created>1414959121346</created>
       <updated>1414959121346</updated>
     </task>
-    <option name="localTasksCounter" value="10" />
+    <task id="LOCAL-00010" summary="game object for counting points">
+      <created>1415130460649</created>
+      <updated>1415130460649</updated>
+    </task>
+    <option name="localTasksCounter" value="11" />
     <servers />
   </component>
   <component name="ToolWindowManager">
@@ -324,7 +327,8 @@
     <MESSAGE value="code refactor:&#10;- add Gameplay module&#10;- add SteeringInterface module for wrapping interface control logic" />
     <MESSAGE value="add handling for game over case plus the way to restart app" />
     <MESSAGE value="add modal window" />
-    <option name="LAST_COMMIT_MESSAGE" value="add modal window" />
+    <MESSAGE value="game object for counting points" />
+    <option name="LAST_COMMIT_MESSAGE" value="game object for counting points" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager />
@@ -359,51 +363,37 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/app/lib/famous/src/modifiers/StateModifier.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="4860">
-          <folding />
-        </state>
+        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="4860" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/lib/famous/src/core/Modifier.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="10" column="43" selection-start="383" selection-end="383" vertical-scroll-proportion="0.02538071" vertical-offset="135" max-vertical-offset="6600">
-          <folding />
-        </state>
+        <state line="10" column="43" selection-start="383" selection-end="383" vertical-scroll-proportion="0.02538071" vertical-offset="135" max-vertical-offset="6600" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/src/BlockController.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="52" column="36" selection-start="1140" selection-end="1146" vertical-scroll-proportion="1.2126623" vertical-offset="33" max-vertical-offset="1785">
-          <folding />
-        </state>
+        <state line="52" column="36" selection-start="1140" selection-end="1146" vertical-scroll-proportion="1.2126623" vertical-offset="33" max-vertical-offset="1785" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/lib/famous/src/core/Transform.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="2" column="16" selection-start="156" selection-end="158" vertical-scroll-proportion="0.0" vertical-offset="30" max-vertical-offset="10320">
-          <folding />
-        </state>
+        <state line="2" column="16" selection-start="156" selection-end="158" vertical-scroll-proportion="0.0" vertical-offset="30" max-vertical-offset="10320" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/src/Block.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="14" column="16" selection-start="473" selection-end="498" vertical-scroll-proportion="0.3409091" vertical-offset="0" max-vertical-offset="616">
-          <folding />
-        </state>
+        <state line="14" column="16" selection-start="473" selection-end="498" vertical-scroll-proportion="0.3409091" vertical-offset="0" max-vertical-offset="616" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/src/SpaceController.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="121" column="69" selection-start="3461" selection-end="3461" vertical-scroll-proportion="0.7564935" vertical-offset="1349" max-vertical-offset="1965">
-          <folding />
-        </state>
+        <state line="121" column="69" selection-start="3461" selection-end="3461" vertical-scroll-proportion="0.7564935" vertical-offset="1349" max-vertical-offset="1965" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/src/Modal.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="48" column="10" selection-start="1263" selection-end="1263" vertical-scroll-proportion="0.39086294" vertical-offset="489" max-vertical-offset="1395">
-          <folding />
-        </state>
+        <state line="48" column="10" selection-start="1263" selection-end="1263" vertical-scroll-proportion="0.39086294" vertical-offset="489" max-vertical-offset="1395" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/src/RowManager.js">
@@ -413,9 +403,9 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/Gameplay.js">
+    <entry file="file://$PROJECT_DIR$/app/src/PointCounter.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="40" column="46" selection-start="1314" selection-end="1314" vertical-scroll-proportion="0.0" vertical-offset="405" max-vertical-offset="1545">
+        <state line="8" column="55" selection-start="247" selection-end="247" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="480">
           <folding />
         </state>
       </provider>
@@ -427,9 +417,9 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/PointCounter.js">
+    <entry file="file://$PROJECT_DIR$/app/src/Gameplay.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="22" column="2" selection-start="531" selection-end="531" vertical-scroll-proportion="0.53571427" vertical-offset="0" max-vertical-offset="616">
+        <state line="84" column="23" selection-start="2525" selection-end="2525" vertical-scroll-proportion="0.5616883" vertical-offset="914" max-vertical-offset="1560">
           <folding />
         </state>
       </provider>

@@ -82,10 +82,11 @@ define(function (require, exports, module) {
 				self._startNewElementCycleOrOverTheGame();
 			}
 		});
-		this._startNewElementCycle();
+		this.restart();
 	};
 
 	Gameplay.prototype.restart = function(){
+		this.pointCounter.reset();
 		this.spaceController.clearBlocks();
 		this._startNewElementCycle();
 	};
