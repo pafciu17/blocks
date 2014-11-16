@@ -23,7 +23,14 @@ define(function (require, exports, module) {
 		this.board = new Board(this.context, boardSize);
 		this.rowManager = new RowManager(this.spaceController);
 
-		this.elementFactory = new ElementFactory(this.context, this.spaceController);
+		var boardSizeInBlocks = this.spaceController.getSize();
+
+		this.elementFactory = new ElementFactory(this.context, this.spaceController, {
+			elementInitialPosition: {
+				x: Math.round(boardSizeInBlocks.x / 2) - 1,
+				y: 0
+			}
+		});
 		this.currentElement = null;
 
 		this.steeringInterface = new SteeringInterface(this.currentElement);

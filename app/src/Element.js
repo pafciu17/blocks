@@ -2,24 +2,28 @@ define(function (require, exports, module) {
 	var Block = require('Block');
 	var BlockController = require('BlockController');
 
+	var addPositions = function (position, blockPosition) {
+		return {
+			x: position.x + blockPosition.x,
+			y: position.y + blockPosition.y
+		};
+	};
+
 	function Element(context, spaceController, options) {
 		var self = this;
 		this.blockControllers = [];
 		this.shapes = options.shapes || [];
 		this.color = options.color || '';
 		this.currentShapeIndex = 0;
-		this.position = {
-			x: 0,
-			y: 0
-		};
-		_.forEach(this.shapes[this.currentShapeIndex], function(position){
+		this.position = options.position || {x: 0, y: 0};
+		_.forEach(this.shapes[this.currentShapeIndex], function(blockPosition){
 			var block = new Block(context, {
 				size: spaceController.getBlockSize(),
 				color: self.color
 			});
 			var blockController = new BlockController();
 			blockController.setSpaceController(spaceController);
-			blockController.setPosition(position);
+			blockController.setPosition(addPositions(self.position, blockPosition));
 			blockController.assignBlock(block);
 			self.blockControllers.push(blockController);
 		})

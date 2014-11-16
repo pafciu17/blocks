@@ -1,8 +1,9 @@
 define(function (require, exports, module) {
 	var Element = require('Element');
 
-	function ElementFactory(context, spaceController) {
+	function ElementFactory(context, spaceController, options) {
 		var self = this;
+		this.options = options || {};
 		this.context = context;
 		this.spaceController = spaceController;
 		this.supportedElements = this.getSupportedElements();
@@ -10,6 +11,7 @@ define(function (require, exports, module) {
 
 	ElementFactory.prototype.createRandomElement = function(){
 		var elementOptions = this.supportedElements[_.random(this.supportedElements.length - 1)];
+		elementOptions.position = _.clone(this.options.elementInitialPosition);
 		return new Element(this.context, this.spaceController, elementOptions);
 	};
 
