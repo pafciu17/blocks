@@ -57,8 +57,16 @@ define(function (require, exports, module) {
 
 	Gameplay.prototype._setTimeStream = function(interval, clb){
 		var pauser = new Rx.Subject();
-		this.timeStream = Rx.Observable.timer(0, 300).pausable(pauser);
-		this.timeStreamSubscription = this.timeStream.subscribe(clb);
+		var timeCounter = 0;
+		var intervalUnit = 50;
+		this.timeStream = Rx.Observable.timer(0, intervalUnit).pausable(pauser);
+		this.timeStreamSubscription = this.timeStream.subscribe(function(){
+		    if (timeCounter === 0) {
+				clb();
+				timeCounter = interval;
+			}
+			timeCounter -= intervalUnit;
+		});
 	};
 
 	Gameplay.prototype._gameIsOver = function(){
@@ -81,7 +89,7 @@ define(function (require, exports, module) {
 
 	Gameplay.prototype.start = function(){
 		var self = this;
-		this._setTimeStream(100, function(){
+		this._setTimeStream(300, function(){
 			if (self.currentElement.canMoveDown()) {
 				self.currentElement.moveDown();
 			} else {
