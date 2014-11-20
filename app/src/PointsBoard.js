@@ -2,16 +2,20 @@ define(function(require, exports, module){
 
 	var Surface = require('famous/core/Surface');
 
+	var getLabel = function(points){
+	    return '<span>Score: ' + points + '</span>';
+	};
+
 	function PointsBoard(context, pointCounter) {
 		var self = this;
 		this.context = context;
 		this.pointCounter = pointCounter;
 		this.pointCounter.setOnPointsChangeCallback(function(points){
-			self.surface.setContent(points);
+			self.surface.setContent(getLabel(points));
 		});
 		this.surface = new Surface({
 			size: [60, 20],
-			content: this.pointCounter.getPoints(),
+			content: getLabel(this.pointCounter.getPoints()),
 			properties: {
 				backgroundColor: 'transparent',
 				zIndex: 5

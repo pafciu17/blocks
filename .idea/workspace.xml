@@ -2,6 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="8ad74054-f295-482b-b370-3745c24fdeec" name="Default" comment="">
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/PointsBoard.js" afterPath="$PROJECT_DIR$/app/src/PointsBoard.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main.js" afterPath="$PROJECT_DIR$/app/src/main.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
@@ -29,7 +30,7 @@
       <file leaf-file-name="main.js" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/app/src/main.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="43" column="16" selection-start="1199" selection-end="1199" vertical-scroll-proportion="0.920354" vertical-offset="125" max-vertical-offset="780">
+            <state line="18" column="7" selection-start="617" selection-end="617" vertical-scroll-proportion="0.34513274" vertical-offset="75" max-vertical-offset="750">
               <folding />
             </state>
           </provider>
@@ -92,7 +93,7 @@
       <file leaf-file-name="PointsBoard.js" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/src/PointsBoard.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="16" column="25" selection-start="485" selection-end="485" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="435">
+            <state line="17" column="60" selection-start="526" selection-end="526" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="495">
               <folding />
             </state>
           </provider>
@@ -145,9 +146,9 @@
         <option value="$PROJECT_DIR$/app/src/PointCounter.js" />
         <option value="$PROJECT_DIR$/app/src/BlockController.js" />
         <option value="$PROJECT_DIR$/app/src/Element.js" />
-        <option value="$PROJECT_DIR$/app/src/PointsBoard.js" />
         <option value="$PROJECT_DIR$/app/src/Gameplay.js" />
         <option value="$PROJECT_DIR$/app/src/ElementFactory.js" />
+        <option value="$PROJECT_DIR$/app/src/PointsBoard.js" />
         <option value="$PROJECT_DIR$/app/src/main.js" />
       </list>
     </option>
@@ -358,7 +359,11 @@
       <created>1416512481391</created>
       <updated>1416512481391</updated>
     </task>
-    <option name="localTasksCounter" value="16" />
+    <task id="LOCAL-00016" summary="add initial layout support">
+      <created>1416515397039</created>
+      <updated>1416515397039</updated>
+    </task>
+    <option name="localTasksCounter" value="17" />
     <servers />
   </component>
   <component name="ToolWindowManager">
@@ -407,7 +412,8 @@
     <MESSAGE value="add way to control initial element position" />
     <MESSAGE value="add way to dynamic control game spead" />
     <MESSAGE value="fix block" />
-    <option name="LAST_COMMIT_MESSAGE" value="fix block" />
+    <MESSAGE value="add initial layout support" />
+    <option name="LAST_COMMIT_MESSAGE" value="add initial layout support" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager />
@@ -473,13 +479,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/PointsBoard.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="16" column="25" selection-start="485" selection-end="485" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="435">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/src/Block.js">
       <provider selected="true" editor-type-id="text-editor">
         <state line="14" column="16" selection-start="473" selection-end="498" vertical-scroll-proportion="0.0" vertical-offset="8" max-vertical-offset="615">
@@ -508,9 +507,16 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/PointsBoard.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="17" column="60" selection-start="526" selection-end="526" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="495">
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="43" column="16" selection-start="1199" selection-end="1199" vertical-scroll-proportion="0.920354" vertical-offset="125" max-vertical-offset="780">
+        <state line="18" column="7" selection-start="617" selection-end="617" vertical-scroll-proportion="0.34513274" vertical-offset="75" max-vertical-offset="750">
           <folding />
         </state>
       </provider>

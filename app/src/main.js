@@ -17,10 +17,6 @@ define(function(require, exports, module) {
 	var layout = new HeaderFooterLayout({
 		footerSize: 30
 	});
-	var modifier = new StateModifier({
-		align: [0.5, 0],
-		origin: [0.5, 0]
-	});
 	containerSurface.add(layout);
 
 	var mainContext = Engine.createContext();
@@ -40,7 +36,9 @@ define(function(require, exports, module) {
 	});
 	gameplay.start();
 
-
+	var modifier = new StateModifier({
+		align: [0.5, 0],
+		origin: [0.5, 0]
+	});
 	mainContext.add(modifier).add(containerSurface);
-
 });
