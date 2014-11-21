@@ -10,12 +10,17 @@ define(function(require, exports, module) {
 	var PointsBoard = require('PointsBoard');
 	var Modal = require('Modal');
 	var ContainerSurface = require('famous/surfaces/ContainerSurface');
+	var BoardSizer = require('BoardSizer');
 
+
+	var footerHeight = 30;
+	var boardSizer = new BoardSizer(12, 20, footerHeight);
+	var size = boardSizer.getSize();
 	var containerSurface = new ContainerSurface({
-		size: [300, 530]
+		size: [size.width, size.height + footerHeight]
 	});
 	var layout = new HeaderFooterLayout({
-		footerSize: 30
+		footerSize: footerHeight
 	});
 	containerSurface.add(layout);
 
@@ -29,7 +34,7 @@ define(function(require, exports, module) {
 		modal.hide();
 	});
 
-	var gameplay = new Gameplay(layout.content);
+	var gameplay = new Gameplay(layout.content, boardSizer);
 	gameplay.setPointCounter(pointCounter);
 	gameplay.setOnGameOverCallback(function(){
 		modal.show();

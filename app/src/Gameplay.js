@@ -8,19 +8,17 @@ define(function (require, exports, module) {
 	var ElementFactory = require('ElementFactory');
 	var SteeringInterface = require('SteeringInterface');
 
-	function Gameplay(context) {
+	function Gameplay(context, boardSizer) {
 		this.context = context;
-		var boardSize = {
-			width: 300,
-			height: 500
-		};
+		var size = boardSizer.getSize();
+		var ratio = boardSizer.getRatio();
 		var blockSize = {
-			width: boardSize.width / 12,
-			height: boardSize.height / 20
+			width: size.width / ratio.x,
+			height: size.height / ratio.y
 		};
 
-		this.spaceController = new SpaceController(boardSize, blockSize);
-		this.board = new Board(this.context, boardSize);
+		this.spaceController = new SpaceController(size, blockSize);
+		this.board = new Board(this.context, boardSizer);
 		this.rowManager = new RowManager(this.spaceController);
 
 		var boardSizeInBlocks = this.spaceController.getSize();
