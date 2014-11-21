@@ -7,9 +7,11 @@ define(function (require, exports, module) {
 	var RowManager = require('RowManager');
 	var ElementFactory = require('ElementFactory');
 	var SteeringInterface = require('SteeringInterface');
+	var Level = require('Level');
 
 	function Gameplay(context, boardSizer) {
 		this.context = context;
+		this.level = new Level();
 		var size = boardSizer.getSize();
 		var ratio = boardSizer.getRatio();
 		var blockSize = {
@@ -53,7 +55,8 @@ define(function (require, exports, module) {
 		return newElement;
 	};
 
-	Gameplay.prototype._setTimeStream = function(interval, clb){
+	Gameplay.prototype._setTimeStream = function(clb){
+		var self = this;
 		var pauser = new Rx.Subject();
 		var timeCounter = 0;
 		var intervalUnit = 50;
@@ -61,7 +64,7 @@ define(function (require, exports, module) {
 		this.timeStreamSubscription = this.timeStream.subscribe(function(){
 		    if (timeCounter === 0) {
 				clb();
-				timeCounter = interval;
+				timeCounter = self.level.getTimeInterval();
 			}
 			timeCounter -= intervalUnit;
 		});
@@ -72,6 +75,7 @@ define(function (require, exports, module) {
 	};
 
 	Gameplay.prototype._startNewElementCycle = function(){
+		this.level.markProgress();
 		this.currentElement = this._createNewElement();
 		this.timeStream.resume();
 	};
@@ -87,7 +91,7 @@ define(function (require, exports, module) {
 
 	Gameplay.prototype.start = function(){
 		var self = this;
-		this._setTimeStream(300, function(){
+		this._setTimeStream(function(){
 			if (self.currentElement.canMoveDown()) {
 				self.currentElement.moveDown();
 			} else {
