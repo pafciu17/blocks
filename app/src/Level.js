@@ -1,7 +1,7 @@
 define(function (require, exports, module) {
 	function Level() {
 		this.levelNumber = 1;
-		this.numberOfUnitsToAdvanceToNextLevel = 1;
+		this.numberOfUnitsToAdvanceToNextLevel = 100;
 		this.progressUnit = 0,
 		this.levels = {
 			1: 300,
@@ -13,7 +13,6 @@ define(function (require, exports, module) {
 	}
 
 	Level.prototype.getTimeInterval = function(){
-		console.log(this.levels[this.levelNumber]);
 		return this.levels[this.levelNumber];
 	};
 
