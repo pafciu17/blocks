@@ -18,6 +18,7 @@ define(function(require, exports, module){
 			content: getLabel(this.pointCounter.getPoints()),
 			properties: {
 				backgroundColor: 'transparent',
+				whiteSpace: 'nowrap',
 				zIndex: 5
 			}
 		});
