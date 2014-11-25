@@ -1,12 +1,14 @@
 /* globals define */
 define(function(require, exports, module) {
 	'use strict';
+	var _ = require('underscore');
 
 	var Engine = require('famous/core/Engine');
 	var HeaderFooterLayout = require('famous/views/HeaderFooterLayout');
 	var StateModifier = require('famous/modifiers/StateModifier');
 	var Gameplay = require('Gameplay');
 	var PointCounter = require('PointCounter');
+	var PointsBoard = require('PointsBoard');
 	var Modal = require('Modal');
 	var ContainerSurface = require('famous/surfaces/ContainerSurface');
 	var BoardSizer = require('BoardSizer');
@@ -24,6 +26,8 @@ define(function(require, exports, module) {
 
 	var mainContext = Engine.createContext();
 	var pointCounter = new PointCounter();
+	var PointsBoard = new PointsBoard(layout.footer, pointCounter);
+
 	var gameplay = new Gameplay(layout.content, boardSizer);
 
 	gameplay.setPointCounter(pointCounter);

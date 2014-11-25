@@ -1,5 +1,4 @@
 define(function(require, exports, module) {
-
 	function SpaceController(boardSize, blockSize) {
 		this.blockSize = blockSize;
 		this.blockControllers = [];
