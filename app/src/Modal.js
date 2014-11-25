@@ -1,6 +1,5 @@
-define(function (require, exports, module) {
+define(function(require, exports, module) {
 	var Surface = require('famous/core/Surface');
-	var Modifier = require('famous/core/Modifier');
 	var StateModifier = require('famous/modifiers/StateModifier');
 	var Transitionable = require('famous/transitions/Transitionable');
 	var SpringTransition = require('famous/transitions/SpringTransition');
@@ -45,44 +44,44 @@ define(function (require, exports, module) {
 		});
 
 		this.modifier.setTransform(
-			Transform.translate(0, - this.height	, 0)
+			Transform.translate(0, -this.height, 0)
 		);
 		this.context.add(this.modifier).add(this.surface);
 	}
 
-	Modal.prototype.setOnClickCallback = function(clb){
+	Modal.prototype.setOnClickCallback = function(clb) {
 		this.onClickCallback = clb;
 	};
 
-	Modal.prototype._getHidePosition = function(){
+	Modal.prototype._getHidePosition = function() {
 		return {
 			x: 0,
-			y: - this.height
+			y: -this.height
 		};
 	};
 
-	Modal.prototype._getShowPosition = function(){
+	Modal.prototype._getShowPosition = function() {
 		return {
 			x: 0,
 			y: window.innerHeight / 2
-		}
+		};
 	};
 
-	Modal.prototype.move = function(position){
+	Modal.prototype.move = function(position) {
 		this.modifier.setTransform(
 			Transform.translate(position.x, position.y, 0), spring
 		);
 	};
 
-	Modal.prototype.show = function(){
+	Modal.prototype.show = function() {
 		var position = this._getShowPosition();
 		this.move(position);
 	};
 
-	Modal.prototype.hide = function(){
+	Modal.prototype.hide = function() {
 		var position = this._getHidePosition();
 		this.move(position);
 	};
 
 	module.exports = Modal;
-})
+});

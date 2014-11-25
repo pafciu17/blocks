@@ -4,18 +4,17 @@
         "amd": true
     },
     "globals": {
-        "DocumentFragment": true
+        "DocumentFragment": true,
+        "_": true
     },
     "rules": {
         "valid-jsdoc": 0,
-        "curly": [1, "multi"],
-        "brace-style": [1, "stroustrup"],
-        "consistent-this": 2,
+        "curly": [2, "all"],
+        "brace-style": [1, "1tbs"],
         "no-constant-condition": 1,
         "no-underscore-dangle": 0,
-        "no-use-before-define": 1,
+        "no-use-before-define": 0,
         "func-names": 0,
-        "func-style": [2, "declaration"],
         "new-cap": 1,
         "new-parens": 2,
         "no-ternary": 0,

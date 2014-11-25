@@ -7,11 +7,9 @@ define(function(require, exports, module) {
 	var StateModifier = require('famous/modifiers/StateModifier');
 	var Gameplay = require('Gameplay');
 	var PointCounter = require('PointCounter');
-	var PointsBoard = require('PointsBoard');
 	var Modal = require('Modal');
 	var ContainerSurface = require('famous/surfaces/ContainerSurface');
 	var BoardSizer = require('BoardSizer');
-
 
 	var footerHeight = 30;
 	var boardSizer = new BoardSizer(12, 20, footerHeight);
@@ -25,21 +23,20 @@ define(function(require, exports, module) {
 	containerSurface.add(layout);
 
 	var mainContext = Engine.createContext();
-	var modal = new Modal(mainContext, 'Game Over');
 	var pointCounter = new PointCounter();
-	var pointsBoard = new PointsBoard(layout.footer, pointCounter);
+	var gameplay = new Gameplay(layout.content, boardSizer);
 
-	modal.setOnClickCallback(function(){
-	    gameplay.restart();
+	gameplay.setPointCounter(pointCounter);
+	gameplay.start();
+
+	var modal = new Modal(mainContext, 'Game Over');
+	modal.setOnClickCallback(function() {
+		gameplay.restart();
 		modal.hide();
 	});
-
-	var gameplay = new Gameplay(layout.content, boardSizer);
-	gameplay.setPointCounter(pointCounter);
-	gameplay.setOnGameOverCallback(function(){
+	gameplay.setOnGameOverCallback(function() {
 		modal.show();
 	});
-	gameplay.start();
 
 	var modifier = new StateModifier({
 		align: [0.5, 0],

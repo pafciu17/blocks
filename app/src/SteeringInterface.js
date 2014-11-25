@@ -1,12 +1,12 @@
-define(function (require, exports, module) {
+define(function(require, exports, module) {
 	var Rx = require('rx.all');
 
-	var getKeyCode = function(evt){
-	    return evt.which || evt.keyCode
+	var getKeyCode = function(evt) {
+		return evt.which || evt.keyCode;
 	};
-	
-	var keyCodeToKeyName = function(keyCode){
-	    switch(keyCode) {
+
+	var keyCodeToKeyName = function(keyCode) {
+		switch (keyCode) {
 			case 37:
 				return 'left';
 			case 38:
@@ -29,7 +29,7 @@ define(function (require, exports, module) {
 				if (!self.element) {
 					return;
 				}
-				switch(direction) {
+				switch (direction) {
 					case 'left':
 						if (self.element.canMoveLeft()) {
 							self.element.moveLeft();
@@ -48,15 +48,15 @@ define(function (require, exports, module) {
 					case 'up':
 						if (self.element.canRotate()) {
 							self.element.rotate();
-						};
+						}
 						break;
-				};
+				}
 			});
-	};
+	}
 
-	SteeringInterface.prototype.setElement = function(element){
+	SteeringInterface.prototype.setElement = function(element) {
 		this.element = element;
 	};
 
 	module.exports = SteeringInterface;
-})
+});

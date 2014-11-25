@@ -1,4 +1,4 @@
-define(function (require, exports, module) {
+define(function(require, exports, module) {
 
 	function BoardSizer(widthRatio, heightRatio, footerSize) {
 		this.widthRatio = widthRatio;
@@ -6,7 +6,7 @@ define(function (require, exports, module) {
 		this.footerSize = footerSize;
 	}
 
-	BoardSizer.prototype.getSize = function(){
+	BoardSizer.prototype.getSize = function() {
 		var innerWidth = window.innerWidth;
 		var innerHeight = window.innerHeight - this.footerSize;
 		var widthUnitRatio = innerWidth / this.widthRatio;
@@ -23,12 +23,12 @@ define(function (require, exports, module) {
 		};
 	};
 
-	BoardSizer.prototype.getRatio = function(){
+	BoardSizer.prototype.getRatio = function() {
 		return {
 			x: this.widthRatio,
 			y: this.heightRatio
-		}
+		};
 	};
 
 	module.exports = BoardSizer;
-})
+});

@@ -1,7 +1,5 @@
-define(function (require, exports, module) {
+define(function(require, exports, module) {
 	var Rx = require('rx.all');
-	var Block = require('Block');
-	var BlockController = require('BlockController');
 	var Board = require('Board');
 	var SpaceController = require('SpaceController');
 	var RowManager = require('RowManager');
@@ -32,37 +30,36 @@ define(function (require, exports, module) {
 			}
 		});
 		this.currentElement = null;
-
 		this.steeringInterface = new SteeringInterface(this.currentElement);
-	};
+	}
 
-	Gameplay.prototype.setPointCounter = function(pointCounter){
+	Gameplay.prototype.setPointCounter = function(pointCounter) {
 		this.pointCounter = pointCounter;
 	};
 
-	Gameplay.prototype._addElementToStack = function(element){
+	Gameplay.prototype._addElementToStack = function(element) {
 		this.spaceController.addElement(element);
 		var filledRows = this.rowManager.getFilledRows();
 		if (filledRows) {
 			this.spaceController.clearRows(filledRows);
 			this.pointCounter.reportScoredRows(filledRows.length);
-		};
+		}
 	};
 
-	Gameplay.prototype._createNewElement = function(){
+	Gameplay.prototype._createNewElement = function() {
 		var newElement = this.elementFactory.createRandomElement();
 		this.steeringInterface.setElement(newElement);
 		return newElement;
 	};
 
-	Gameplay.prototype._setTimeStream = function(clb){
+	Gameplay.prototype._setTimeStream = function(clb) {
 		var self = this;
 		var pauser = new Rx.Subject();
 		var timeCounter = 0;
 		var intervalUnit = 50;
 		this.timeStream = Rx.Observable.timer(0, intervalUnit).pausable(pauser);
-		this.timeStreamSubscription = this.timeStream.subscribe(function(){
-		    if (timeCounter === 0) {
+		this.timeStreamSubscription = this.timeStream.subscribe(function() {
+			if (timeCounter === 0) {
 				clb();
 				timeCounter = self.level.getTimeInterval();
 			}
@@ -70,17 +67,17 @@ define(function (require, exports, module) {
 		});
 	};
 
-	Gameplay.prototype._gameIsOver = function(){
+	Gameplay.prototype._gameIsOver = function() {
 		return this.spaceController.doesRowContainsBlocks(0);
 	};
 
-	Gameplay.prototype._startNewElementCycle = function(){
+	Gameplay.prototype._startNewElementCycle = function() {
 		this.level.markProgress();
 		this.currentElement = this._createNewElement();
 		this.timeStream.resume();
 	};
 
-	Gameplay.prototype._startNewElementCycleOrOverTheGame = function(){
+	Gameplay.prototype._startNewElementCycleOrOverTheGame = function() {
 		this.timeStream.pause();
 		if (this._gameIsOver()) {
 			this.gameOverClb();
@@ -89,9 +86,9 @@ define(function (require, exports, module) {
 		}
 	};
 
-	Gameplay.prototype.start = function(){
+	Gameplay.prototype.start = function() {
 		var self = this;
-		this._setTimeStream(function(){
+		this._setTimeStream(function() {
 			if (self.currentElement.canMoveDown()) {
 				self.currentElement.moveDown();
 			} else {
@@ -102,15 +99,15 @@ define(function (require, exports, module) {
 		this.restart();
 	};
 
-	Gameplay.prototype.restart = function(){
+	Gameplay.prototype.restart = function() {
 		this.pointCounter.reset();
 		this.spaceController.clearBlocks();
 		this._startNewElementCycle();
 	};
 
-	Gameplay.prototype.setOnGameOverCallback = function(clb){
+	Gameplay.prototype.setOnGameOverCallback = function(clb) {
 		this.gameOverClb = clb;
 	};
 
 	module.exports = Gameplay;
-})
+});

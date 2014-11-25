@@ -1,4 +1,4 @@
-define(function(require, exports, module){
+define(function(require, exports, module) {
 
 	var Surface = require('famous/core/Surface');
 
@@ -11,7 +11,7 @@ define(function(require, exports, module){
 			}
 		});
 		this.context.add(this.surface);
-	};
+	}
 
 	module.exports = Board;
-})
+});
