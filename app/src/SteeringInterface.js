@@ -1,16 +1,31 @@
 define(function (require, exports, module) {
 	var Rx = require('rx.all');
 
+	var getKeyCode = function(evt){
+	    return evt.which || evt.keyCode
+	};
+	
+	var keyCodeToKeyName = function(keyCode){
+	    switch(keyCode) {
+			case 37:
+				return 'left';
+			case 38:
+				return 'up';
+			case 39:
+				return 'right';
+			case 40:
+				return 'down';
+		}
+		return null;
+	};
+
 	function SteeringInterface() {
 		var self = this;
 		this.element = null;
 		this.stream = Rx.Observable.fromEvent(document, 'keydown')
-			.map(function(keyEvent) {
-				return keyEvent.keyIdentifier.toLowerCase();
-			})
-			.filter(function(keyId){
-				return _.contains(['left', 'right', 'down', 'up'], keyId);
-			}).subscribe(function(direction) {
+			.map(getKeyCode)
+			.map(keyCodeToKeyName)
+			.subscribe(function(direction) {
 				if (!self.element) {
 					return;
 				}
