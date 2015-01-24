@@ -17,3 +17,7 @@ app/lib
 .yo-rc.json
 .idea/
 .idea/workspace
+
+# other ones #
+##############
+management_scripts/
