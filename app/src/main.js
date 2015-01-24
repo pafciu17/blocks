@@ -1,4 +1,5 @@
 /* globals define */
+
 define(function(require, exports, module) {
 	'use strict';
 	var _ = require('underscore');
@@ -26,7 +27,7 @@ define(function(require, exports, module) {
 
 	var mainContext = Engine.createContext();
 	var pointCounter = new PointCounter();
-	var PointsBoard = new PointsBoard(layout.footer, pointCounter);
+	var pointsBoard = new PointsBoard(layout.footer, pointCounter);
 
 	var gameplay = new Gameplay(layout.content, boardSizer);
 
