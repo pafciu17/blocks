@@ -12,10 +12,14 @@ define(function(require, exports, module) {
 	var Modal = require('Modal');
 	var ContainerSurface = require('famous/surfaces/ContainerSurface');
 	var BoardSizer = require('BoardSizer');
+	var Sizer = require('Sizer');
+
+	var sizer = new Sizer();
 
 	var footerHeight = 30;
 	var boardSizer = new BoardSizer(12, 20, footerHeight);
 	var size = boardSizer.getSize();
+
 	var containerSurface = new ContainerSurface({
 		size: [size.width, size.height + footerHeight]
 	});
